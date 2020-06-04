@@ -1,24 +1,22 @@
-# README
+# todo-app DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##projectsテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|project|string|null :false, index: true|
 
-* Ruby version
+##association
+has_many :tasks, dependent: :destroy
 
-* System dependencies
+##tasksテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|task|string|null :false, index: true|
+|text|text|null :false|
+|deadline|datetime|null: false|
+|project|references|null: false, foreign_key: true|
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##association
+belongs_to :project
