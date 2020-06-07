@@ -14,3 +14,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// $(function(){
+//     $('.new-project-path').on('click', function(){
+//         $('.new-project-modal').fadeIn();
+//         return false;
+//     });
+// });
+
+// var btn = document.getElementsByClassName('new-project-path');
+// btn.addEventListener('click', function(){
+//     btn.style.display = 'block';
+// })
+
+window.onload = function(){
+    var modal = document.getElementById('modal-popup');
+    if(!modal) return;
+    modal.classList.add('is-show');
+}
