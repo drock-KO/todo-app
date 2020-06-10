@@ -1,11 +1,28 @@
-<% @projects.each do |project| %>
-	<p><%= project.project %></p>
-		<% project_in_tasks = project %>
-			<% project_in_tasks.tasks.each do |task| %>
-				<p><%= link_to "#{task.task}", task_path(task) %></p>
-				<span class="deadline-space"><%= task.date %><%= task.time %></span>
-			<% end %>
-<% end %>
-
+<div class="all-projects">
+	<% @projects.each do |project| %>
+	<div class="individual-project">
+		<div class="project-name">
+			<p><%= project.project %></p>
+		</div>
+			<% project_in_tasks = project %>
+			<div class="all-tasks">
+				<% project_in_tasks.tasks.each do |task| %>
+					<div class="individual-task">
+						<ul class="task-and-deadline">
+							<div class="task-title">
+								<li>
+									<%= link_to (task_path(task)) do %>
+									<h4><%= task.task %></h4>
+									<span class="deadline-space"><%= task.date %><%= task.time %></span>
+									<% end %>
+								</li>
+							</div>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+	</div>
+	<% end %>
+</div>
 
 
