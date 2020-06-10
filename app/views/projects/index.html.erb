@@ -1,0 +1,11 @@
+<% @projects.each do |project| %>
+	<p><%= project.project %></p>
+		<% project_in_tasks = project %>
+			<% project_in_tasks.tasks.each do |task| %>
+				<p><%= link_to "#{task.task}", task_path(task) %></p>
+				<span class="deadline-space"><%= task.deadline.strftime("%Y年%m月%d日") %><%= task.deadline_time.strftime("%H:%M") %></span>
+			<% end %>
+<% end %>
+
+
+

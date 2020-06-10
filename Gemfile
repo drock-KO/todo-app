@@ -70,3 +70,5 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'mini_magick'
 gem 'kaminari'
+gem "guard-shell"
+gem "toastr-rails"
